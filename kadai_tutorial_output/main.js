@@ -58,6 +58,7 @@ const keyPress = e => {
   // 正タイプの場合
   // スコアのインクリメント
   score++;
+  wrap.classList.remove('mistyped');
   typed += untyped.substring(0, 1);
   untyped = untyped.substring(1);
   typedfield.textContent = typed;
