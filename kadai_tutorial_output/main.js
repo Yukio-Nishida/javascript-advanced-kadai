@@ -58,7 +58,6 @@ const keyPress = e => {
   // 正タイプの場合
   // スコアのインクリメント
   score++;
-  wrap.classList.remove('mistyped');
   typed += untyped.substring(0, 1);
   untyped = untyped.substring(1);
   typedfield.textContent = typed;
@@ -76,28 +75,7 @@ const rankCheck = score => {
 // テキストを格納する変数を作る
 let text = '';
 
-/ タイマー部分のHTML要素（p要素）を取得する
-   let typed = count.textContent;
-   const id = setInterval(() => {
-     
-     // カウントダウンする
-     typed++;
-
-     count.textContent = typed;
-
-     // カウントが0になったらタイマーを停止する
-
-     if(time <= 0) {
-
-       clearInterval(id);
-
-     }
-
-   }, 1000);
-
- };
-
-*// スコアに応じて異なるメッセージを変数textに格納する
+// スコアに応じて異なるメッセージを変数textに格納する
 if(score < 100) {
   text = `あなたのランクはCです。\nBランクまであと${100 - score}文字です。`;
 } else if(score < 200) {
